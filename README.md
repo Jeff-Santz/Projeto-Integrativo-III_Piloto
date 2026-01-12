@@ -19,13 +19,13 @@ Repository Structure
 For organization, maintenance, and evaluation purposes, the project was structured as a monorepo, divided into main directories corresponding to the functional nodes and hardware dependencies:
 
 1. src (Firmware)
-This directory contains the source code for the three types of nodes in the network:
+    This directory contains the source code for the three types of nodes in the network:
 
-Transmissor (Origin Node): Responsible for reading environmental data, formatting packets, and executing the 125kHz carrier modulation.
+    Transmissor (Origin Node): Responsible for reading environmental data, formatting packets, and executing the 125kHz carrier modulation.
 
-Bypass (Repeater Node): Implements a Store-and-Forward mechanism to extend the network range.
+    Bypass (Repeater Node): Implements a Store-and-Forward mechanism to extend the network range.
 
-Receptor (Destination Node): Handles signal decoding, data integrity validation, and final output.
+    Receptor (Destination Node): Handles signal decoding, data integrity validation, and final output.
 
 2. RadioHead-master (Modified Library)
 This directory contains a customized version of the RadioHeadlibrary. The `RH_ASK` driver was modified to implement OOK modulation via software-generated PWM (125kHz) on GPIO 4. This change allows the ESP32 to interface directly with the custom discrete RF power stage without the need for commercial modules.
